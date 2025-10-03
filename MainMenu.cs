@@ -36,11 +36,13 @@ namespace Manu_Uus
 
                 if (key == ConsoleKey.UpArrow)
                 {
-                    selected = (selected - 1 + options.Length) % options.Length;
+                    if (selected > 0)
+                        selected--;
                 }
                 else if (key == ConsoleKey.DownArrow)
                 {
-                    selected = (selected + 1) % options.Length;
+                    if (selected < options.Length - 1)
+                        selected++;
                 }
                 else if (key == ConsoleKey.Enter)
                 {
