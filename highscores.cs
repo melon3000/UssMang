@@ -7,7 +7,7 @@ namespace Manu_Uus
 {
     class HighScores
     {
-        private string filePath = "Nimed.txt";
+        string filePath = @"C:\\Users\\opilane\\Source\\Repos\\UssMang\\tulemused.txt";
 
         public void SaveScore(string playerName, int score)
         {
@@ -50,12 +50,12 @@ namespace Manu_Uus
             return list.OrderByDescending(s => s.score).ToList();
         }
 
-        public void ShowTopScores(int topN = 5)
+        public void ShowTopScores(int topN = 10)
         {
             var scores = LoadScores();
 
             Console.Clear();
-            Console.WriteLine("=== Parimad mängujad ===");
+            Console.WriteLine("=== 10 Parimad mängujad ===");
             for (int i = 0; i < Math.Min(topN, scores.Count); i++)
             {
                 Console.WriteLine($"{i + 1}. {scores[i].name} - {scores[i].score}");

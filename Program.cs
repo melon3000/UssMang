@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Threading;
+using Manu_Uus;
 
 namespace Manu_Uus
 {
@@ -127,24 +128,11 @@ namespace Manu_Uus
                 Thread.Sleep(1);
             }
 
-            WriteGameOver();
+            //mängu lõpp
+            GameOver.WriteGameOver();
 
             player.AskName();
             highScores.SaveScore(player.Name, score.Points);
-        }
-
-        static void WriteGameOver()
-        {
-            int xOffset = 25;
-            int yOffset = 8;
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.SetCursorPosition(xOffset, yOffset++);
-            Console.WriteLine("============================");
-            Console.SetCursorPosition(xOffset + 1, yOffset++);
-            Console.WriteLine("          L Õ P P");
-            Console.SetCursorPosition(xOffset, yOffset++);
-            Console.WriteLine("============================");
-            Console.ResetColor();
         }
     }
 }
